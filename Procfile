@@ -1,2 +1,2 @@
 release: python manage.py migrate
-web: gunicorn artsrec.wsgi --log-file=-
+web: gunicorn rus_radio.wsgi --log-file=-

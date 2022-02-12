@@ -1,0 +1,29 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+chr_all = int(input('Общее количество часов '))
+num_night = int(input('Количество ночей '))
+avans = int(input('Какой был аванс '))
+kredit = float(input('Оплата кредита'))
+tarif = 7.42
+
+chr_tab = chr_all * 0.75 # количество часов в табеле
+po_oklad = round(chr_tab) * tarif
+visl = po_oklad * 15 / 100
+nights_mon = (tarif / 2) * (num_night * 8) * 0.75
+dirt = po_oklad + visl + nights_mon
+nal_vich = (kredit + 130)
+pens = dirt * 1 / 100
+nalog = (dirt - nal_vich - pens) * 13 / 100
+
+minusy = nalog + pens + avans
+kvidache = dirt - minusy
+print('Количество табельных часов ' + str(round(chr_tab)))
+print('По окладу ' + str(round(po_oklad, 2)))
+print('За выслугу лет ' + str(round(visl, 2)))
+print('Ночные ' + str(round(nights_mon, 2)))
+print('Подоходный налог ' + str(round(nalog, 2)))
+print('Пенсионный фонд '+ str(round(pens, 2)))
+print('За месяц грязными ' + str(round(dirt, 2)))
+print('К выдаче ' + str(round(kvidache, 2)))
+input()
